@@ -15,6 +15,24 @@ public class PointTest {
     }
 
     @Test
+    public void when11To44Then4Dot24() {
+        double expected = 4.24;
+        Point a = new Point(1, 1);
+        Point b = new Point(4, 4);
+        double out = a.distance(b);
+        Assert.assertEquals(expected, out, 0.01);
+    }
+
+    @Test
+    public void when23To55Then3Dot61() {
+        double expected = 3.61;
+        Point a = new Point(2, 3);
+        Point b = new Point(5, 5);
+        double out = a.distance(b);
+        Assert.assertEquals(expected, out, 0.01);
+    }
+
+    @Test
     public void when22To64Then4dot47() {
         double expected = 4.47;
         Point a = new Point(2, 2);
