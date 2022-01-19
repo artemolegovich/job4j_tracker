@@ -27,7 +27,6 @@ public class Calculator {
         System.out.println(Calculator.minus(10));
         Calculator calc = new Calculator();
         System.out.println(calc.divide(10));
-        Calculator calculator = new Calculator();
-        System.out.println(calculator.sumAllOperations(10));
+        System.out.println(calc.sumAllOperations(10));
     }
 }
