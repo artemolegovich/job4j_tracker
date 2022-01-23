@@ -26,7 +26,7 @@ public class Library {
         System.out.println();
         System.out.println("Books named \"Clean code\":");
         for (Book element : books) {
-            if (element.getName().equals("Clean code")) {
+            if ("Clean code".equals(element.getName())) {
                 System.out.println(element.getName() + ": " +  element.getPages() + " pages");
             }
         }
