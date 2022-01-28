@@ -1,8 +1,6 @@
 package ru.job4j.poly;
 
 public class Bus implements Transport {
-    public Bus() {
-    }
 
     @Override
     public void drive() {
