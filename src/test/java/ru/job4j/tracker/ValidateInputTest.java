@@ -36,8 +36,12 @@ public class ValidateInputTest {
                 new String[] {"1", "2", "3", "4"}
         );
         ValidateInput input = new ValidateInput(out, in);
-        int selected = input.askInt("Select:");
-        assertThat(selected, is(1));
+        int[] selected = new int[4];
+        for (int i = 0; i < selected.length; i++) {
+            selected[i] = input.askInt("Select:");
+        }
+        int[] expected = new int[] {1, 2, 3, 4};
+        assertThat(expected, is(selected));
     }
 
     @Test
