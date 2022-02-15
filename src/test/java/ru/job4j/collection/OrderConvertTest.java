@@ -23,10 +23,10 @@ public class OrderConvertTest {
         List<Order> orders = new ArrayList<>();
         orders.add(new Order("3sfe", "Dress"));
         orders.add(new Order("4fre", "Trousers"));
+        orders.add(new Order("4fre", "Shirt"));
         orders.add(new Order("5bfy", "Jumper"));
+        orders.add(new Order("5bfy", "Socks"));
         HashMap<String, Order> map = OrderConvert.process(orders);
-        assertThat(map.get("3sfe"), is(new Order("3sfe", "Dress")));
-        assertThat(map.get("4fre"), is(new Order("4fre", "Trousers")));
-        assertThat(map.get("5bfy"), is(new Order("5bfy", "Jumper")));
+        assertTrue(map.size() < orders.size());
     }
 }
