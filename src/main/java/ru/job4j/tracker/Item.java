@@ -63,7 +63,8 @@ public class Item {
             return false;
         }
         Item item = (Item) o;
-        return Objects.equals(name, item.name);
+        return Objects.equals(name, item.name)
+                && id == item.id;
     }
 
     @Override

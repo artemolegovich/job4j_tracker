@@ -8,7 +8,7 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class ItemSortingTest {
+public class ItemTest {
     @Test
     public void whenSortAscending() {
         List<Item> items = Arrays.asList(
