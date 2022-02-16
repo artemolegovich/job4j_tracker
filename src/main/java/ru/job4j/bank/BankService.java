@@ -12,19 +12,13 @@ public class BankService {
         users.putIfAbsent(user, new ArrayList<>());
     }
 
-    private List<Account> getAccountList(String passport) {
-        List<Account> rsl = null;
+    public void addAccount(String passport, Account account) {
         User user = findByPassport(passport);
         if (user != null) {
-            rsl = users.get(user);
-        }
-        return rsl;
-    }
-
-    public void addAccount(String passport, Account account) {
-        List<Account> accounts = getAccountList(passport);
-        if (accounts != null && !accounts.contains(account)) {
-            accounts.add(account);
+            List<Account> accounts = users.get(user);
+            if (!accounts.contains(account)) {
+                accounts.add(account);
+            }
         }
     }
 
@@ -41,9 +35,9 @@ public class BankService {
 
     public Account findByRequisite(String passport, String requisite) {
         Account rsl = null;
-        List<Account> accounts = getAccountList(passport);
-        if (accounts != null) {
-            for (Account account : accounts) {
+        User user = findByPassport(passport);
+        if (user != null) {
+            for (Account account : users.get(user)) {
                 if (requisite.equals(account.getRequisite())) {
                     rsl = account;
                     break;
