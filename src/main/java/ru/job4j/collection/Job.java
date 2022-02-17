@@ -42,7 +42,7 @@ public class Job implements Comparable<Job> {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return Objects.hash(name, priority);
     }
 
     @Override
