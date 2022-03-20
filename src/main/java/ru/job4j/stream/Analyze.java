@@ -29,9 +29,7 @@ public class Analyze {
 
     public static List<Tuple> averageScoreByPupil(Stream<Pupil> stream) {
         return stream
-                .flatMap(p -> p.getSubjects()
-                        .stream()
-                )
+                .flatMap(p -> p.getSubjects().stream())
                         .collect(
                                 Collectors.groupingBy(Subject::getName,
                                         LinkedHashMap::new,
@@ -56,12 +54,9 @@ public class Analyze {
 
     public static Tuple bestSubject(Stream<Pupil> stream) {
         return stream
-                .flatMap(p -> p.getSubjects()
-                        .stream()
-                )
+                .flatMap(p -> p.getSubjects().stream())
                 .collect(
                         Collectors.groupingBy(Subject::getName,
-                                LinkedHashMap::new,
                                 Collectors.summingDouble(
                                         Subject::getScore)
                         )
